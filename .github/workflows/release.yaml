@@ -1,0 +1,36 @@
+
+name: release
+
+on: 
+    push:
+        tags:
+            - 'v*'
+
+jobs:
+    create_config_tar:
+        name: Create the configuration tarball
+        steps:
+            - name: Checkout the code
+              uses: actions/checkout@v2
+
+            - name: Create the tarball
+              uses: |
+                  tar --strip-components=1 -czv config/ -f packages.redbeardlab.com.tar.gz
+
+            - name: Create the Release
+              uses: actions/create-release@v1
+              id: create_release
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                  tag_name: ${{ github.ref }}
+                  draft: false
+
+            - name: Upload Configuration Tarball
+              uses: actions/upload-release-asset@v1
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                  upload_url: ${{ steps.create_release.outputs.upload_url }}
+                  asset_path: ./packages.redbeardlab.com.tar.gz
+
