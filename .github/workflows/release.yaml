@@ -39,7 +39,7 @@ jobs:
 
             - name: Create the docker container
               run: |
-                  docker build . -t redbeardlab/packages:${{GITHUB_REF}}
+                  docker build . -t redbeardlab/packages:${{ env.GITHUB_REF }}
 
             - name: Login into dockerhub
               run: |
@@ -47,6 +47,6 @@ jobs:
 
             - name: push into dockerhub
               run: |
-                  docker push redbeardlab/packages:${{GITHUB_REF}}
+                  docker push redbeardlab/packages:${{ env.GITHUB_REF }}
 
                     
