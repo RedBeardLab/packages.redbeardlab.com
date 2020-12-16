@@ -31,7 +31,7 @@ We include:
 1. common linux utilities (curl, htop, iotop, jq, lua, ripgrep, time, tmux, wget, zip)
 
 
-Other software can be installed on request, over email simone@redbeardlab.com or over twitter @redbeardlab
+Other software can be installed on request, over email simone@redbeardlab.com or over twitter [@redbeardlab][tw]
 
 ## CVMFS Tradeoffs
 
