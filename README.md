@@ -96,7 +96,7 @@ It is possible to install it either as DEB or RPM package.
 All the configuration can be found on this tarbal. And it can be installed with:
 
 ```bash
-curl https://github.com/RedBeardLab/packages.redbeardlab.com/releases/latest/download/packages.redbeardlab.com.config.tar | sudo tar -x - /etc
+curl -L https://github.com/RedBeardLab/packages.redbeardlab.com/releases/latest/download/packages.redbeardlab.com.config.tar | sudo tar -x -C /etc
 ```
 
 To check that everything works, `cvmfs_config probe` should return OK.
