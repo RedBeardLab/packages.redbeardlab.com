@@ -22,13 +22,13 @@ A public CVMFS installation that includes common Linux utilities and basic softw
 
 We include:
 
-    1. basic linux utilities (binutils, coreutils, bash, zsh, tar)
-    2. a humble selection of compilers (gcc 9, clang 11, go 1.15, rustc 1.45)
-    3. interpreters (python 3.9, python 2.7, lua 5.3)
-    4. software for development (git, automake, cmake, autoconf, autogen, bison, flex) 
-    5. databases (postgres, mysql, redis)
-    6. editors (neovim, emacs)
-    7. common linux utilities (curl, htop, iotop, jq, lua, ripgrep, time, tmux, wget, zip)
+1. basic linux utilities (binutils, coreutils, bash, zsh, tar)
+1. a humble selection of compilers (gcc 9, clang 11, go 1.15, rustc 1.45)
+1. interpreters (python 3.9, python 2.7, lua 5.3)
+1. software for development (git, automake, cmake, autoconf, autogen, bison, flex) 
+1. databases (postgres, mysql, redis)
+1. editors (neovim, emacs)
+1. common linux utilities (curl, htop, iotop, jq, lua, ripgrep, time, tmux, wget, zip)
 
 
 Other software can be installed on request, over email simone@redbeardlab.com or over twitter @redbeardlab
