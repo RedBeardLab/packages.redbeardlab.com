@@ -16,7 +16,7 @@ jobs:
 
             - name: Create the tarball
               run: |
-                  tar --strip-components=1 -czv config/ -f packages.redbeardlab.com.tar.gz
+                  tar -C config/ -czv . -f packages.redbeardlab.com.tar.gz
 
             - name: Create the Release
               uses: actions/create-release@v1
