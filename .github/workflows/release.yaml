@@ -16,7 +16,7 @@ jobs:
 
             - name: Create the tarball
               run: |
-                  tar -C config/ -czv . -f packages.redbeardlab.com.tar.gz
+                  tar -C config/ -cv . -f packages.redbeardlab.com.tar
 
             - name: Create the Release
               uses: actions/create-release@v1
@@ -33,6 +33,6 @@ jobs:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
                   upload_url: ${{ steps.create_release.outputs.upload_url }}
-                  asset_path: ./packages.redbeardlab.com.tar.gz
-                  asset_name: packages.redbeardlab.com.config.tar.gz
-                  asset_content_type: application/tar+gzip
+                  asset_path: ./packages.redbeardlab.com.tar
+                  asset_name: packages.redbeardlab.com.config.tar
+                  asset_content_type: application/tar
