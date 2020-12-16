@@ -84,7 +84,9 @@ While these are all valid use cases, at the moment, we will focus on the enhanci
 ## Installation
 
 In order to get started, is necessary to install the CVMFS client and to setup it correctly.
-The CVMFS client can be found on the official homepage: cernvm.cern.ch/fs/ 
+
+The CVMFS client can be found on the official homepage: [cernvm.cern.ch/fs](https://cernvm.cern.ch/fs) 
+
 It is possible to install it either as DEB or RPM package.
 
 All the configuration can be found on this tarbal. And it can be installed with:
