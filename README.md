@@ -3,13 +3,17 @@
 
 Roughly ~10 years ago, CERN had a software problem.
 
-How to distribute the big software stack necessary to analyze and simulate collision data to ~100 datacenter around the world? How to do it while minimizing bandwidth? And how to do it while maximizing performance?
+How to distribute the big software stack necessary to analyze and simulate collision data to ~100 datacenter around the world?
+How to do it while minimizing bandwidth? And how to do it while maximizing performance?
 
-The standard answer to these questions today would be containers. However, 10 years ago containers technology was in its infancy. Moreover, distributing containers images is rather expensive in terms of bandwidth and so in terms of startup time.
+The standard answer to these questions today would be containers. 
+However, 10 years ago containers technology was in its infancy.
+Moreover, distributing containers images is rather expensive in terms of bandwidth and so in terms of startup time.
 
 The solution to this problem for CERN was CernVM-FileSystem or CVMFS for short.
 
-CVMFS is a FUSE filesystem, that features lazy-loading, extremely cacheable and developed to distribution of software. The distribution happens over standard HTTP, that allow to leverage the existing infrastructure for caching.
+CVMFS is a FUSE filesystem, that features lazy-loading, extremely cacheable and developed to distribution of software.
+The distribution happens over standard HTTP, that allow to leverage the existing infrastructure for caching.
 
 Software is installed once on a single source of truth storage machines and it is distributed to (potentially) millions of clients who access it from a read-only filesystem.
 On the client side, CVMFS exposes a read-only, POSIX, filesystem.
