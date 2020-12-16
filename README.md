@@ -114,7 +114,7 @@ This will append to your $PATH the location of the software installed in `/cvmfs
 
 ## Getting help
 
-The fastest way to get help is over twitter @redbeardlab or via email simone@redbeardlab.com
+The fastest way to get help is over twitter [@redbeardlab][tw] or via email simone@redbeardlab.com
 
 In alternative, it is possible to open an issue with this github repo. 
 
@@ -122,7 +122,7 @@ In alternative, it is possible to open an issue with this github repo.
 
 It is possible to add software to `/cvmfs/packages.redbeardlab.com`, this will allow everybody to use it and benefit from it.
 
-In order to request a new software to be installed, please ask through the standard communication channels, twitter @redbeardlab and email simone@redbeardlab.com 
+In order to request a new software to be installed, please ask through the standard communication channels, twitter [@redbeardlab][tw] and email simone@redbeardlab.com 
 
 ## Technical Background
 
