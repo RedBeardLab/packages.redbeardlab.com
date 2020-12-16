@@ -2,6 +2,7 @@
 # 🚀 Announcing packages.redbeardlab.com a public CVMFS repository for common software
 
 Roughly ~10 years ago, CERN had a software problem.
+
 How to distribute the big software stack necessary to analyze and simulate collision data to ~100 datacenter around the world? How to do it while minimizing bandwidth? And how to do it while maximizing performance?
 
 The standard answer to these questions today would be containers. However, 10 years ago containers technology was in its infancy. Moreover, distributing containers images is rather expensive in terms of bandwidth and so in terms of startup time.
@@ -21,13 +22,13 @@ A public CVMFS installation that includes common Linux utilities and basic softw
 
 We include:
 
-    basic linux utilities (binutils, coreutils, bash, zsh, tar)
-    a humble selection of compilers (gcc 9, clang 11, go 1.15, rustc 1.45)
-    interpreters (python 3.9, python 2.7, lua 5.3)
-    software for development (git, automake, cmake, autoconf, autogen, bison, flex) 
-    databases (postgres, mysql, redis)
-    editors (neovim, emacs)
-    common linux utilities (curl, htop, iotop, jq, lua, ripgrep, time, tmux, wget, zip)
+    1. basic linux utilities (binutils, coreutils, bash, zsh, tar)
+    2. a humble selection of compilers (gcc 9, clang 11, go 1.15, rustc 1.45)
+    3. interpreters (python 3.9, python 2.7, lua 5.3)
+    4. software for development (git, automake, cmake, autoconf, autogen, bison, flex) 
+    5. databases (postgres, mysql, redis)
+    6. editors (neovim, emacs)
+    7. common linux utilities (curl, htop, iotop, jq, lua, ripgrep, time, tmux, wget, zip)
 
 
 Other software can be installed on request, over email simone@redbeardlab.com or over twitter @redbeardlab
@@ -50,7 +51,7 @@ This makes CVMFS usable for interactive use cases as well, at the cost of waitin
 
 ## Suggested use cases
 
-packages.redbeardlab.com targets developers use cases.
+packages.redbeardlab.com targets **developers use cases**.
 
 There are different ways in which the CVMFS repository can be used.
 
@@ -88,8 +89,9 @@ It is possible to install it either as DEB or RPM package.
 
 All the configuration can be found on this tarbal. And it can be installed with:
 
+```bash
 curl -o - | sudo tar -x - /
-
+```
 
 To check that everything works, `cvmfs_config probe` should return OK.
 
@@ -138,3 +140,4 @@ Finally, we are exploiting the bandwidth, reliability and diffusion of *BunnyCDN
 
 DO NOT rely on this for business critical needs. Please, get in touch, if your business need a similar solution.
 
+[tw]: https://twitter.com/redbeardlab
