@@ -34,4 +34,5 @@ jobs:
               with:
                   upload_url: ${{ steps.create_release.outputs.upload_url }}
                   asset_path: ./packages.redbeardlab.com.tar.gz
+                  asset_name: packages.redbeardlab.com.config.tar.gz
 
