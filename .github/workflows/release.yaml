@@ -36,3 +36,17 @@ jobs:
                   asset_path: ./packages.redbeardlab.com.tar
                   asset_name: packages.redbeardlab.com.config.tar
                   asset_content_type: application/tar
+
+            - name: Create the docker container
+              run: |
+                  docker build . -t redbeardlab/packages:${{GITHUB_REF}}
+
+            - name: Login into dockerhub
+              run: |
+                  docker login -p ${{ secrets.DOCKERHUB_TOKEN}} -u siscia
+
+            - name: push into dockerhub
+              run: |
+                  docker push redbeardlab/packages:${{GITHUB_REF}}
+
+                    
