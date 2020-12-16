@@ -9,6 +9,7 @@ on:
 jobs:
     create_config_tar:
         name: Create the configuration tarball
+        runs-on: ubuntu-latest
         steps:
             - name: Checkout the code
               uses: actions/checkout@v2
