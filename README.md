@@ -34,7 +34,6 @@ We include:
 1. editors (neovim, emacs)
 1. common linux utilities (curl, htop, iotop, jq, lua, ripgrep, time, tmux, wget, zip)
 
-
 Other software can be installed on request, over email simone@redbeardlab.com or over twitter [@redbeardlab][tw]
 
 ## CVMFS Tradeoffs
@@ -43,7 +42,8 @@ The main use case of CVMFS is for latency insensitive workload, it works out of 
 
 Running a service from CVMFS is usually faster than installing the packages from repository and the running it.
 
-What CVMFS is not well suited for is interactive use case. If you need to invoke bash, then awk, then grep, then python, then ruby, then jq, etc, etc... waiting in front of the terminal, then CVMFS will be look slow.
+What CVMFS is not well suited for is interactive use case. 
+If you need to invoke bash, then awk, then grep, then python, then ruby, then jq, etc, etc... waiting in front of the terminal, then CVMFS will be look slow.
 
 Unless the data is already in the local cache, in such case the performance difference is negligible with the respect of  the local filesystem.
 
@@ -93,6 +93,8 @@ The CVMFS client can be found on the official homepage: [cernvm.cern.ch/fs](http
 
 It is possible to install it either as DEB or RPM package.
 
+After the installation of the CVMFS client, it is necessary to set up CVMFS.
+
 All the configuration can be found on this tarbal. And it can be installed with:
 
 ```bash
@@ -103,8 +105,13 @@ To check that everything works, `cvmfs_config probe` should return OK.
 
 As an alternative it is possible to run the CVMFS client inside a docker container and expose the `/cvmfs` mount point to the host.
 
-docker run -it
-
+```bash
+docker run -d \
+	--device /dev/fuse \
+	--volume /cvmfs:/cvmfs:shared \
+	--privileged
+	redbeardlab/packages
+```
 
 ## Using the software installed
 
