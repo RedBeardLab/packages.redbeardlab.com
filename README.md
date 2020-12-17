@@ -113,6 +113,8 @@ docker run -d \
 	redbeardlab/packages
 ```
 
+If, for some reason it does work, please contact me: simone@redbeardlab.com or [@redbeardlab][tw]
+
 ## Using the software installed
 
 Once CVMFS is running, the last step is to actually use the software installed.
