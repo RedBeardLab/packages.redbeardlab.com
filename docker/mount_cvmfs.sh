@@ -26,7 +26,7 @@ echo "                                      NOTE                                
 echo "==================================================================================="
 echo "You should run me on Docker like this"
 echo "  docker run --cap-add SYS_ADMIN --device /dev/fuse --volume /cvmfs:/cvmfs:shared \\"
-echo "    -e CVMFS_HTTP_PROXY=<site squid> cvmfs/service"
+echo "    -e CVMFS_HTTP_PROXY=<site squid> redbeardlab/packages"
 echo
 echo "Optionally you can also set the 'CVMFS_REPOSITORIES=unpacked.cern.ch,...'"
 echo "  and 'CVMFS_QUOTA_LIMIT=<cache limit in MB>' environment variables"
