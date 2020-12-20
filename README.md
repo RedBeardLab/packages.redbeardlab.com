@@ -123,7 +123,8 @@ As an alternative it is possible to run the CVMFS client inside a docker contain
 docker run -d \
 	--device /dev/fuse \
 	--volume /cvmfs:/cvmfs:shared \
-	--privileged
+	--volume /var/lib/cvmfs:/var/lib/cvmfs \
+	--privileged \
 	redbeardlab/packages
 ```
 
