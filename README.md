@@ -36,6 +36,30 @@ We include:
 
 Other software can be installed on request, over email simone@redbeardlab.com or over twitter [@redbeardlab][tw] or even with an issues [against the repository.](https://github.com/RedBeardLab/packages.redbeardlab.com)
 
+Beside common software, we are including a growing number of compilers, interpreters and tools to work with specific languanges.
+
+At the moment we have tools to work with Golang and Javascript.
+
+### Golang tools
+
+For Golang developers, we include ALL the Golang compilers starting from `go1.5.4` up to the latest `go1.16`.
+
+It is possible to invoke those compilers simply with `go$version`, for instance to use the `go` compiler version `1.14.3` you will need to invoke `go1.14.3`
+
+Beaware, the very first time you compile your code with the compiler hosted in `packages.redbeardlab.com`, it will be necessary to download all the standard library, and it might take a while.
+From the second time everything will be fast and snappy.
+
+### Javascript
+
+For Javascript developer we included `nvm` to manage multiple version of the `node` runtime. At the moment all the LTS version of node are installed.
+
+To use `nvm` is necessary to first source it: `source /cvmfs/packages.redbeardlab.com/node/nvm/nvm.sh`, after that `nvm` will be available and it will be possible to switch between the different versions of the node vm.
+With node it comes also `npm` and `npx`.
+
+Other tools are installed as well, in particular it is available a `Typescript` compiler, `yarn`, `babel`, `parcel` and `webpack`.
+
+The first invocation of those tools could be a little slow, but after everything get loaded into cache, it will be fast and snappy.
+
 ## Installation
 
 In order to get started, is necessary to install the CVMFS client and to setup it correctly.
