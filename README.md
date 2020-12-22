@@ -20,7 +20,7 @@ On the client side, CVMFS exposes a read-only, POSIX, filesystem.
 
 Up to now, CVMFS was deployed mainly in private installation inside big HPC centers.
 
-Today we are announcing **packages.redbeardlab.com**
+Today we are announcing [**packages.redbeardlab.com**][pk]
 
 A public CVMFS installation that includes common Linux utilities and basic software.
 
@@ -35,55 +35,6 @@ We include:
 1. common linux utilities (curl, htop, iotop, jq, lua, ripgrep, time, tmux, wget, zip)
 
 Other software can be installed on request, over email simone@redbeardlab.com or over twitter [@redbeardlab][tw] or even with an issues [against the repository.](https://github.com/RedBeardLab/packages.redbeardlab.com)
-
-## CVMFS Tradeoffs
-
-The main use case of CVMFS is for latency insensitive workload, it works out of the box for CI scripts, or for running long-lasting servers.
-
-Running a service from CVMFS is usually faster than installing the packages from repository and the running it.
-
-What CVMFS is not well suited for is interactive use case. 
-If you need to invoke bash, then awk, then grep, then python, then ruby, then jq, etc, etc... waiting in front of the terminal, then CVMFS will be look slow.
-
-Unless the data is already in the local cache, in such case the performance difference is negligible with the respect of  the local filesystem.
-
-Good news is that CVMFS automatically manages a local LRU cache.
-
-When a file is downloaded from the CVMFS Server, it is automatically stored in the local filesystem, when the same file is requested again, the local copy is used. 
-
-This makes CVMFS usable for interactive use cases as well, at the cost of waiting a little the first time a new file is accessed.
-
-## Suggested use cases
-
-packages.redbeardlab.com targets **developers use cases**.
-
-There are different ways in which the CVMFS repository can be used.
-
-### Enhancing local workstations
-
-The suggestion would be to put `/cvmfs/packages.redbeardlab.com/bin` at the end of the $PATH in local workstations.
-
-This will not disturb the local workflow, but it will provide all the software installed on packages.redbeardlab.com on-demand.
-
-It can be very useful when you want to try software without actually installing it.
-
-Sometimes it is necessary to quickly run some application, either you can pull down a docker container or invoke it from /cvmfs/packages.redbeardlab.com
-
-Very often this is the case for compilers. Need to test your software on different compilers or different compilers versions? Just invoke a different compiler.
-
-Similarly, for different interpreters. Do you need to quickly test your application in python 3.8 and python 3.9? Just invoke the correct one.
-
-### CI/CD
-
-The first and time-consuming steps of most CI is about installing all the necessary dependency for building and testing your application.
-
-If all the dependency were available on `/cvmfs/packages.redbeardlab.com` this step would be superfluous.
-
-### Long Running Servers
-
-It can make sense to deploy also long running services on top of CVMFS. This is especially true if it is necessary to spin up a cluster of several machines, all with the same software.
-
-While these are all valid use cases, at the moment, we will focus on the enhancing local workstations use case.
 
 ## Installation
 
@@ -144,6 +95,56 @@ $ source /cvmfs/packages.redbeardlab.com/setup.sh
 
 This will append to your $PATH the location of the software installed in `/cvmfs/packages.redbeardlab.com`
 
+
+## CVMFS Tradeoffs
+
+The main use case of CVMFS is for latency insensitive workload, it works out of the box for CI scripts, or for running long-lasting servers.
+
+Running a service from CVMFS is usually faster than installing the packages from repository and the running it.
+
+What CVMFS is not well suited for is interactive use case. 
+If you need to invoke bash, then awk, then grep, then python, then ruby, then jq, etc, etc... waiting in front of the terminal, then CVMFS will be look slow.
+
+Unless the data is already in the local cache, in such case the performance difference is negligible with the respect of  the local filesystem.
+
+Good news is that CVMFS automatically manages a local LRU cache.
+
+When a file is downloaded from the CVMFS Server, it is automatically stored in the local filesystem, when the same file is requested again, the local copy is used. 
+
+This makes CVMFS usable for interactive use cases as well, at the cost of waiting a little the first time a new file is accessed.
+
+## Suggested use cases
+
+packages.redbeardlab.com targets **developers use cases**.
+
+There are different ways in which the CVMFS repository can be used.
+
+### Enhancing local workstations
+
+The suggestion would be to put `/cvmfs/packages.redbeardlab.com/bin` at the end of the $PATH in local workstations.
+
+This will not disturb the local workflow, but it will provide all the software installed on packages.redbeardlab.com on-demand.
+
+It can be very useful when you want to try software without actually installing it.
+
+Sometimes it is necessary to quickly run some application, either you can pull down a docker container or invoke it from /cvmfs/packages.redbeardlab.com
+
+Very often this is the case for compilers. Need to test your software on different compilers or different compilers versions? Just invoke a different compiler.
+
+Similarly, for different interpreters. Do you need to quickly test your application in python 3.8 and python 3.9? Just invoke the correct one.
+
+### CI/CD
+
+The first and time-consuming steps of most CI is about installing all the necessary dependency for building and testing your application.
+
+If all the dependency were available on `/cvmfs/packages.redbeardlab.com` this step would be superfluous.
+
+### Long Running Servers
+
+It can make sense to deploy also long running services on top of CVMFS. This is especially true if it is necessary to spin up a cluster of several machines, all with the same software.
+
+While these are all valid use cases, at the moment, we will focus on the enhancing local workstations use case.
+
 ## Getting help
 
 The fastest way to get help is over twitter [@redbeardlab][tw] or via email simone@redbeardlab.com
@@ -175,3 +176,4 @@ Finally, we are exploiting the bandwidth, reliability and diffusion of *BunnyCDN
 DO NOT rely on this for business critical needs. Please, get in touch, if your business need a similar solution.
 
 [tw]: https://twitter.com/redbeardlab
+[pk]: http://packages.redbeardlab.com
